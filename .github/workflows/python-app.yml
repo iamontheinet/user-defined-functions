@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.8
+    - name: Setup Python 3.8
       uses: actions/setup-python@v3
       with:
         python-version: "3.8"
@@ -25,6 +25,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
         pip install snowflake-connector-python
+    - name: Download Update UDF script
+      run: |
+        curl -o $PWD/update_udfs.py https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_udfs.py
     - name: Deploy UDF
       env:
         SNOWSQL_ACT: ${{ secrets.account }}
@@ -35,4 +38,4 @@ jobs:
         SNOWSQL_WRH: ${{ secrets.warehouse }}
         SNOWSQL_SCH: ${{ secrets.schema }}
       run: |
-        python https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_udfs.py
+        python update_udfs.py
