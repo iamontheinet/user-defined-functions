@@ -1,8 +1,8 @@
-# Deploy Custom Packages from GitHub
+# Deploy Custom Packages from GitHub to Snowflake
 
 This setup (and code) demonstrates a way to deploy custom pure-Python packages from a GitHub repo using GitHub Actions onto Snowflake.
 
-When these packages are used to create User-Defined Functions (UDFs) this flow makes it easy to maintain and deploy custom code across several UDFs at once and automagically without manual intervention.
+When these packages are used to create [User-Defined Functions (UDFs) in Snowpark Python](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-creating.html#label-udf-python-stage) this flow makes it easy to maintain and deploy custom code across several UDFs at once and automagically without manual intervention.
 
 **NOTE** that this setup decouples the pure-Python custom package from the script that uploads the package to a stage and examines the UDFs that are affected by the updated custom package.
 Setup
