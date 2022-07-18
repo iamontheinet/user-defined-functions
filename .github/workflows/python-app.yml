@@ -27,7 +27,7 @@ jobs:
         pip install snowflake-connector-python
     - name: Download Update UDF script
       run: |
-        curl -o $PWD/update_udfs.py https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_packages.py
+        curl -o $PWD/update_packages.py https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_packages.py
     - name: Deploy UDF
       env:
         SNOWSQL_ACT: ${{ secrets.account }}
@@ -38,4 +38,4 @@ jobs:
         SNOWSQL_WRH: ${{ secrets.warehouse }}
         SNOWSQL_SCH: ${{ secrets.schema }}
       run: |
-        python update_udfs.py
+        python update_packages.py
