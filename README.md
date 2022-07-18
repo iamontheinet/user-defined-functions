@@ -24,6 +24,7 @@ Setup
 
 ### GitHub Repository 2: Python Script 
 * This repo contains Python script that is downloaded and run from GitHub Actions workflow in Repo 1 when updates are made to the package in the main branch of Repo 1
+* This repo also contains a JSON file that has a list of packages to be updated when this script is run
 * This script 
    * Connects to Snowflake using Snowflake Python Connector and the environment variables set using GitHub Secrets
    * Downloads the latest version of the package off main branch from Repo 1 and uploads it to a Snowflake stage (where UDFs can access it)
