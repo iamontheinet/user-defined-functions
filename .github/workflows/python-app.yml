@@ -25,10 +25,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
         pip install snowflake-connector-python
-    - name: Download Update packages script
+    - name: Download update packages script
       run: |
         curl -o $PWD/update_packages.py https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_packages.py
-    - name: Deploy UDF
+    - name: Deploy packages
       env:
         SNOWSQL_ACT: ${{ secrets.account }}
         SNOWSQL_USR: ${{ secrets.user }}
