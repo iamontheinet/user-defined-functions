@@ -20,7 +20,7 @@ Setup
      * Setup environment variables (database, warehouse, schema, user, password, and role) from GitHub Secrets that will be used by Snowflake Python Connector in the script (downloaded in step 3) to connect to Snowflake
      * Run script (downloaded in step 3) to deploy the updated code
      
-[Link to this repo.](https://github.com/iamontheinet/user-defined-functions)
+***Repo 1***:  [Sample custom package](https://github.com/iamontheinet/user-defined-functions/blob/main/do_something_cool.py) and [GitHub Actions workflow file.](https://github.com/iamontheinet/user-defined-functions/blob/main/.github/workflows/python-app.yml)
 
 ### GitHub Repository 2: Python Script 
 * This repo contains Python script that is downloaded and run from GitHub Actions workflow in Repo 1 when updates are made to the package in the main branch of Repo 1
@@ -29,4 +29,4 @@ Setup
    * Downloads the latest version of the package off main branch from Repo 1 and uploads it to a Snowflake stage (where UDFs can access it)
    * Loops through all the registered UDFs that belong to the current database and schema, examines the imports, and prints out names of UDFs that are affected and use the updated package
 
-[Link to this script.](https://github.com/iamontheinet/c-i-c-d/blob/main/update_udfs.py
+***Repo 2***: [Script to update packages](https://github.com/iamontheinet/c-i-c-d/blob/main/update_packages.py) and [List of packages](https://github.com/iamontheinet/c-i-c-d/blob/main/packages_list.json)
