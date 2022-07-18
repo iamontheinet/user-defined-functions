@@ -28,6 +28,7 @@ jobs:
     - name: Download update packages script
       run: |
         curl -o $PWD/update_packages.py https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/update_packages.py
+        curl -o $PWD/packages_list.json https://raw.githubusercontent.com/iamontheinet/c-i-c-d/main/packages_list.json
     - name: Deploy packages
       env:
         SNOWSQL_ACT: ${{ secrets.account }}
